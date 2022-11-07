@@ -1,0 +1,24 @@
+<form action="answer" method="get" data-turbo="false" class="row g-3">
+  <input type="text" name="question" class="form-control" value="<%= params[:question] %>">
+  <input type="submit" value="Ask!" class="btn btn-primary">
+</form>
+
+<div class="bd-callout bd-callout">
+  <h4><%= params[:question] %></h4>
+  - You
+</div>
+
+
+<% answer_text = @stupid_answer[0] %>
+<% answer_type = @stupid_answer[1] %>
+<% if answer_type == 1 %>
+<div class="bd-callout bd-callout-success">
+  <h4><%= answer_text %></h4>
+  - Stupid Coach
+</div>
+<% else %>
+<div class="bd-callout bd-callout-danger">
+  <h4><%= answer_text %></h4>
+  - Stupid Coach
+</div>
+<% end %>
